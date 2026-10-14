@@ -1,0 +1,62 @@
+body {
+  background-color: cadetblue;
+  padding: 5% 8%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+p {
+  display: inline-block;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* For authenticate page */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card,
+.register-card,
+.auth-change-mode-section {
+  padding: 5px 10px;
+  background-color: lightpink;
+}
+
+button.submit {
+  margin-top: 10px;
+}
+
+/* For draft page */
+.body-div {
+  padding: 5px 10px;
+}
+
+.warerobe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.each-garment {
+  padding: 5px 10px;
+  background-color: lightgreen;
+  border-bottom: 1px solid darkgreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.outfit-combination {
+  background-color: lightyellow;
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login page</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <!-- Login -->
+    <div class="login-card">
+      <form method="POST">
+        <h3>Log in to Digital Warerobe</h3>
+
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+
+        <button class="submit" type="submit">Log In</button>
+      </form>
+    </div>
+
+    <!-- Register -->
+    <div class="register-card hidden">
+      <form method="POST">
+        <h3>Sign up to Digital Warerobe</h3>
+
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+        <label for="confirm-password">Confirm password</label>
+        <input type="password" name="confirm-password" id="confirm-password" />
+
+        <button class="submit" type="submit">Create account</button>
+      </form>
+    </div>
+
+    <!-- Changing mode button -->
+    <div class="auth-change-mode-section">
+      <p>New to Digital Warerobe</p>
+      <button>Create an account</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Change between Login and Register
+      // Make sure when change mode, all old data in the previous form should be deleted
+      const changeModeSection = document.querySelector(
+        ".auth-change-mode-section",
+      );
+      const changeModeButton = changeModeSection.querySelector("button");
+      const register_card = document.querySelector(".register-card");
+      const login_card = document.querySelector(".login-card");
+
+      changeModeButton.addEventListener("click", function () {
+        if (register_card.classList.contains("hidden")) {
+          // Moving from login mode to register mode
+          login_card.querySelector("form").reset();
+
+          register_card.classList.remove("hidden");
+          login_card.classList.add("hidden");
+
+          changeModeSection.querySelector("p").innerHTML =
+            "Already had account with Digital Warerobe";
+          changeModeButton.innerHTML = "Go to login";
+        } else {
+          // Moving from register mode to login mode
+          register_card.querySelector("form").reset();
+
+          login_card.classList.remove("hidden");
+          register_card.classList.add("hidden");
+
+          changeModeSection.querySelector("p").innerHTML =
+            "New to Digital Warerobe";
+          changeModeButton.innerHTML = "Create an account";
+        }
+      });
+    </script>
+  </body>
+</html>
