@@ -6,103 +6,29 @@
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <h1>Hello</h1>
-    <div class="body-div search-box" style="background-color: lightblue">
-      <label for="search-item">Bỏ search, thay tab, thêm filter</label>
+    <h1>Welcome back to your Warerobe</h1>
+    <div class="body-div filter-box" style="background-color: lightblue">
+      <div
+        class="filter-box-category"
+        style="background-color: rgb(250, 236, 135); margin-bottom: 10px"
+      >
+        <button class="category-option">All</button>
+        <button class="category-option" value="top">Top</button>
+        <button class="category-option" value="bottom">Bottom</button>
+        <button class="category-option" value="hat">Hat</button>
+        <button class="category-option" value="footwear">Footwear</button>
+        <button class="category-option" value="accessory">Accessory</button>
+      </div>
+      <div
+        class="filter-box-color"
+        style="background-color: rgb(214, 173, 230)"
+      >
+        Maybe là dropbox for colour
+      </div>
       <p>Add filter navigator right side, category, colour, name (optional)</p>
     </div>
     <div class="body-div warerobe-grid" style="background-color: lightpink">
-      <!-- This one for js where
-      auto create grid form to show each garment
-       -->
-      <div class="each-garment">
-        <div>Hinh 1, neen to ra</div>
-        <div>Đây là áo</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 2, neen to ra</div>
-        <div>Đây là quần</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 3, neen to ra</div>
-        <div>Đây là mũ</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 4, neen to ra</div>
-        <div>Đây là quần</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 5, neen to ra</div>
-        <div>Đây là giày</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 6, neen to ra</div>
-        <div>Đây là giày</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 7, neen to ra</div>
-        <div>Đây là giày</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 8, neen to ra</div>
-        <div>Đây là quần</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 9, neen to ra</div>
-        <div>Đây là giày</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 10, neen to ra</div>
-        <div>Đây là áo</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 11, neen to ra</div>
-        <div>Đây là áo</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 12, neen to ra</div>
-        <div>Đây là accessory</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 13, neen to ra</div>
-        <div>Đây là giày</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 14, neen to ra</div>
-        <div>Đây là giày</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 15, neen to ra</div>
-        <div>Đây là quần</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 16, neen to ra</div>
-        <div>Đây là accessory</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 17, neen to ra</div>
-        <div>Đây là accessory</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 28, neen to ra</div>
-        <div>Đây là quần</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 19, neen to ra</div>
-        <div>Đây là quần</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 20, neen to ra</div>
-        <div>Đây là giày</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 21, neen to ra</div>
-        <div>Đây là accessory</div>
-      </div>
-      <div class="each-garment">
-        <div>Hinh 22, neen to ra</div>
-        <div>Đây là áo</div>
-      </div>
+      <!-- This one for js where auto create grid form to show each garment -->
     </div>
     <div class="body-div outfit-combination">
       <!-- This one is for showing garments when
@@ -111,5 +37,50 @@
        and all the search bar and item list is on the nav bar-->
       Ddaay laf khu cho outfit
     </div>
+
+    <!-- JavaScript -->
+    <script>
+      const itemData = {
+        // Later, this one is exported from the data table item (1 user) or warerobe (when integrate many users)
+        // Ignore index here, all in order that they are added
+        // itemName: ["category", "color"]
+        item1: ["top", "blue"],
+        item2: ["bottom", "yellow"],
+        item3: ["hat", "white"],
+        item4: ["bottom", "white"],
+        item5: ["footware", "blue"],
+        item6: ["footware", "black"],
+        item7: ["footware", "pink"],
+        item8: ["top", "blue"],
+        item9: ["footware", "pink"],
+        item10: ["top", "blue"],
+        item11: ["top", "pink"],
+        item12: ["accessory", "blue"],
+        item13: ["footware", "pink"],
+        item14: ["footware", "blue"],
+        item15: ["bottom", "black"],
+        item16: ["accessory", "blue"],
+        item17: ["accessory", "black"],
+        item18: ["bottom", "blue"],
+        item19: ["bottom", "white"],
+        item20: ["footware", "purple"],
+        item21: ["accessory", "white"],
+        item22: ["top", "white"],
+      };
+
+      const warerobe_grid = document.querySelector(".warerobe-grid");
+      for (const item in itemData) {
+        // console.log(item);
+        // console.log(itemData[item]);
+        const eachItemDiv = document.createElement("div");
+        eachItemDiv.classList.add("each-garment");
+        eachItemDiv.dataset.category = itemData[item];
+        // console.log(itemData[item]);
+        eachItemDiv.innerHTML = `
+          <div>${item}</div>
+          <div>Đây là ${itemData[item][0]}, ${itemData[item][1]}</div>`;
+        warerobe_grid.appendChild(eachItemDiv);
+      }
+    </script>
   </body>
 </html>
