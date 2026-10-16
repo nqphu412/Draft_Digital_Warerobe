@@ -27,6 +27,11 @@ button.selected {
   color: white;
 }
 
+select,
+option {
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
@@ -69,10 +74,17 @@ button.submit {
 .each-garment {
   padding: 5px 10px;
   background-color: lightgreen;
+  opacity: 0.8;
   border-bottom: 1px solid darkgreen;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.2s ease;
+}
+.each-garment:hover {
+  border: 1px solid black;
+  opacity: 1.2;
+  cursor: pointer;
 }
 
 .outfit-combination {
