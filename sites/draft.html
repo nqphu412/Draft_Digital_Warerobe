@@ -89,30 +89,45 @@
             categoryBtn.classList.remove("selected"),
           );
           categoryButton.classList.add("selected");
-          showWarerobe(categoryButton.value);
+          showWarerobe(categoryButton.value, currentColor);
         });
       });
 
-      //
+      // Filter warerobe based on color selected
+      const colorOptionDropbox = document.querySelector("#color-options");
+      colorOptionDropbox.addEventListener("change", () => {
+        showWarerobe(currentCategory, colorOptionDropbox.value);
+      });
 
       // Show warerobe based on current option of category and color
       function showWarerobe(categoryType, colorType) {
         warerobe_grid.innerHTML = ``;
         currentCategory = categoryType;
+        currentColor = colorType;
         // console.log(currentCategory);
+
+        function showSelectedItem(selectedItem, categoryType, colorType) {
+          const eachItemDiv = document.createElement("div");
+          eachItemDiv.classList.add("each-garment");
+          eachItemDiv.style.backgroundColor = itemData[selectedItem][1]; // This line is only used to text color dropbox
+          eachItemDiv.dataset.category = itemData[selectedItem];
+          eachItemDiv.innerHTML = `
+                <div>${selectedItem}</div>
+                <div>Đây là ${itemData[selectedItem][0]}, ${itemData[selectedItem][1]}</div>`;
+          warerobe_grid.appendChild(eachItemDiv);
+        }
+
         for (const item in itemData) {
-          if (
-            itemData[item].includes(categoryType) ||
-            categoryType === "allCategory"
-          ) {
-            const eachItemDiv = document.createElement("div");
-            eachItemDiv.classList.add("each-garment");
-            eachItemDiv.style.backgroundColor = itemData[item][1]; // This line is only used to text color dropbox
-            eachItemDiv.dataset.category = itemData[item];
-            eachItemDiv.innerHTML = `
-          <div>${item}</div>
-          <div>Đây là ${itemData[item][0]}, ${itemData[item][1]}</div>`;
-            warerobe_grid.appendChild(eachItemDiv);
+          if (categoryType === "allCategory") {
+            if (colorType === "allColor")
+              showSelectedItem(item, categoryType, colorType);
+            else if (itemData[item].includes(colorType))
+              showSelectedItem(item, categoryType, colorType);
+          } else if (itemData[item].includes(categoryType)) {
+            if (colorType === "allColor")
+              showSelectedItem(item, categoryType, colorType);
+            else if (itemData[item].includes(colorType))
+              showSelectedItem(item, categoryType, colorType);
           }
         }
       }
