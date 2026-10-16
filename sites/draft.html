@@ -12,7 +12,7 @@
         class="filter-box-category"
         style="background-color: rgb(250, 236, 135); margin-bottom: 10px"
       >
-        <button class="category-option">All</button>
+        <button class="category-option selected">All</button>
         <button class="category-option" value="top">Top</button>
         <button class="category-option" value="bottom">Bottom</button>
         <button class="category-option" value="hat">Hat</button>
@@ -81,6 +81,17 @@
           <div>Đây là ${itemData[item][0]}, ${itemData[item][1]}</div>`;
         warerobe_grid.appendChild(eachItemDiv);
       }
+
+      const categoryOptionButtons =
+        document.querySelectorAll(".category-option");
+      categoryOptionButtons.forEach((categoryButton) => {
+        categoryButton.addEventListener("click", () => {
+          categoryOptionButtons.forEach((categoryBtn) =>
+            categoryBtn.classList.remove("selected"),
+          );
+          categoryButton.classList.add("selected");
+        });
+      });
     </script>
   </body>
 </html>

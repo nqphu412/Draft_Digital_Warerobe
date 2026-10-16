@@ -12,7 +12,19 @@ p {
 }
 
 button {
+  background-color: rgb(182, 250, 182);
+  border: 1px solid black;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(50, 126, 50);
+}
+
+button:active,
+button.selected {
+  background-color: rgb(7, 29, 7);
+  color: white;
 }
 
 .hidden {
