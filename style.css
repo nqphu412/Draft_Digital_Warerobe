@@ -53,6 +53,12 @@ button.submit {
   padding: 5px 10px;
 }
 
+.filter-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .warerobe-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
