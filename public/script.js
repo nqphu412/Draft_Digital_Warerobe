@@ -1,3 +1,4 @@
+/////////////// Main page
 const itemData = {
   // Later, this one is exported from the data table item (1 user) or warerobe (when integrate many users)
   // Ignore index here, all in order that they are added
@@ -39,7 +40,7 @@ let currentCategory = "allCategory";
 let currentColor = "allColor";
 
 const warerobe_grid = document.querySelector(".warerobe-grid");
-showWarerobe(currentCategory, currentColor);
+if (warerobe_grid) showWarerobe(currentCategory, currentColor);
 
 // Allows 1 button selected at a time
 // Only items that in that category are shown
@@ -56,9 +57,11 @@ categoryOptionButtons.forEach((categoryButton) => {
 
 // Filter warerobe based on color selected
 const colorOptionDropbox = document.querySelector("#color-options");
-colorOptionDropbox.addEventListener("change", () => {
-  showWarerobe(currentCategory, colorOptionDropbox.value);
-});
+if (colorOptionDropbox) {
+  colorOptionDropbox.addEventListener("change", () => {
+    showWarerobe(currentCategory, colorOptionDropbox.value);
+  });
+}
 
 // Show warerobe based on current option of category and color
 function showWarerobe(categoryType, colorType) {
@@ -96,3 +99,35 @@ function showWarerobe(categoryType, colorType) {
     }
   }
 }
+
+/////////////// Login - Register page
+// Change between Login and Register
+// Make sure when change mode, all old data in the previous form should be deleted
+const changeModeSection = document.querySelector(".auth-change-mode-section");
+const changeModeButton = changeModeSection.querySelector(
+  ".auth-change-mode-button",
+);
+const register_card = document.querySelector(".register-card");
+const login_card = document.querySelector(".login-card");
+
+changeModeButton.addEventListener("click", function () {
+  if (register_card.classList.contains("hidden")) {
+    // Moving from login mode to register mode
+    login_card.querySelector("form").reset();
+
+    register_card.classList.remove("hidden");
+    login_card.classList.add("hidden");
+
+    changeModeSection.querySelector("p").innerHTML = "Already had account?";
+    changeModeButton.innerHTML = "Go to login";
+  } else {
+    // Moving from register mode to login mode
+    register_card.querySelector("form").reset();
+
+    login_card.classList.remove("hidden");
+    register_card.classList.add("hidden");
+
+    changeModeSection.querySelector("p").innerHTML = "New to Digital Warerobe";
+    changeModeButton.innerHTML = "Create an account";
+  }
+});
