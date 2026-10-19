@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  color: #46513d;
 }
 
 p {
@@ -20,25 +21,62 @@ a {
   cursor: pointer;
 }
 
-.hidden {
-  display: none;
+/* For authenticate page */
+h3 {
+  font-size: 44px;
 }
 
-/* For authenticate page */
+.body-authPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 form {
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
 
+input {
+  height: 40px;
+  box-shadow: inset 0 0 3px #46513dc5;
+  border: none;
+  border-radius: 8px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
 .login-card,
 .register-card,
 .auth-change-mode-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
   padding: 5px 10px;
-  background-color: lightpink;
 }
 
-button.submit {
+.submit,
+.auth-change-mode-button {
+  height: 30px;
+  border: none;
   margin-top: 10px;
+  border-radius: 5px;
+  background-color: #68685b;
+  transition: all ease 0.2s;
+}
+
+.submit:hover,
+.auth-change-mode-button:hover {
+  background-color: #292b24;
+  color: #f5f0e6;
+}
+
+.submit:active,
+.auth-change-mode-button:active {
+  background-color: #eae2d2;
+  color: #292b24;
 }
 
 /* For draft page */
@@ -147,4 +185,8 @@ button.submit {
 
 .outfit-combination {
   background-color: lightyellow;
+}
+
+.hidden {
+  display: none;
 }
