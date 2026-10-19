@@ -27,7 +27,6 @@ const GarmentSchema = new mongoose.Schema(
         "White",
         "Pink",
         "Blue",
-        "Pink",
         "Grey",
         "Green",
         "Red",

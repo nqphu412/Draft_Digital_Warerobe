@@ -17,7 +17,9 @@ p {
 select,
 button,
 option,
+input,
 a {
+  font-family: "Bebas Neue", sans-serif;
   cursor: pointer;
 }
 
@@ -58,25 +60,28 @@ input {
 }
 
 .submit,
-.auth-change-mode-button {
+.auth-change-mode-button,
+.upload-card-add-button {
   height: 30px;
   border: none;
   margin-top: 10px;
   border-radius: 5px;
-  background-color: #68685b;
+  color: #f5f0e6;
+  background-color: #46513d;
   transition: all ease 0.2s;
 }
 
 .submit:hover,
-.auth-change-mode-button:hover {
+.auth-change-mode-button:hover,
+.upload-card-add-button:hover {
   background-color: #292b24;
-  color: #f5f0e6;
 }
 
 .submit:active,
-.auth-change-mode-button:active {
+.auth-change-mode-button:active,
+.upload-card-add-button:active {
   background-color: #eae2d2;
-  color: #292b24;
+  color: #46513d;
 }
 
 /* For draft page */
@@ -147,7 +152,10 @@ input {
   color: #f5f0e6;
 }
 
-#color-options {
+#color-options,
+#upload-card-garment-category,
+#upload-card-garment-color {
+  padding-left: 14px;
   width: 100%;
   height: 30px;
   border-radius: 5px;
@@ -166,11 +174,11 @@ input {
   column-gap: 10px;
   row-gap: 10px;
 }
-.each-garment-button {
+.upload-garment-button {
   border: none;
 }
 .each-garment,
-.each-garment-button {
+.upload-garment-button {
   padding: 5px 10px;
   background-color: lightgreen;
   opacity: 0.8;
@@ -181,7 +189,7 @@ input {
   transition: transform 0.2s ease;
 }
 .each-garment:hover,
-.each-garment-button:hover {
+.upload-garment-button:hover {
   box-shadow: 0px 0px 10px #46513d;
   opacity: 1.2;
   cursor: pointer;
@@ -196,8 +204,11 @@ input {
   top: 50%;
   left: 50%;
   width: 50%;
-  height: 70%;
+  height: clamp(400px, 70vh, 500px);
   transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: #eae2d2;
   border: none;
   border-radius: 10px;
@@ -207,6 +218,9 @@ input {
 }
 
 .close-upload-card-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   font-size: 30px;
   width: 40px;
   height: 40px;
@@ -218,6 +232,42 @@ input {
 .close-upload-card-button:hover {
   background-color: #46513d;
   color: #d5ccba;
+}
+
+.upload-form {
+  width: 100%;
+}
+
+#upload-card-garment-image {
+  padding-top: min(30px, max(20px, 4vh));
+
+  display: flex;
+  flex-direction: column;
+  text-align-last: center;
+  justify-content: center;
+  text-align: center;
+
+  height: min(300px, max(120px, 23vh));
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Style the Choose File button */
+#upload-card-garment-image::file-selector-button {
+  display: block;
+  background-color: #46513d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 0 auto 10px;
+  cursor: pointer;
+}
+
+.upload-card-garment-category-color-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
 }
 
 .hidden {
