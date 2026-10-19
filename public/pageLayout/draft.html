@@ -12,12 +12,12 @@
     />
   </head>
   <body>
-    <div class="nav-bar">
+    <div class="nav-bar blurred">
       <a href="" class="nav-item">Personal Warerobe</a>
       <a href="" class="nav-item">Outfit Hallway</a>
     </div>
 
-    <div class="filter-box">
+    <div class="filter-box blurred">
       <div class="filter-box-category">
         <span style="font-size: 30px; padding-left: 10px">Category</span>
         <button class="category-option selected" value="allCategory">
@@ -30,7 +30,7 @@
         <button class="category-option" value="accessory">Accessory</button>
       </div>
 
-      <div class="filter-box-color">
+      <div class="filter-box-color blurred">
         <span style="font-size: 30px; padding-left: 10px">Color</span>
         <select name="color-options" id="color-options">
           <!-- To allow multiple colors, checkbox with hidden nav is required-->
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <div class="content-container">
+    <div class="content-container blurred">
       <h1>Welcome back to your Warerobe</h1>
       <div class="warerobe-grid">
         <!-- This one for js where auto create grid form to show each garment -->
@@ -58,6 +58,10 @@
        choosing from the warerobe-grid
        But maybe best if this is for different site
        and all the search bar and item list is on the nav bar-->
+    </div>
+
+    <div class="upload-card-container">
+      <button class="close-upload-card-button">&times;</button>
     </div>
 
     <!-- JavaScript -->

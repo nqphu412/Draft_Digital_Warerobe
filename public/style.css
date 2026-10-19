@@ -166,8 +166,11 @@ input {
   column-gap: 10px;
   row-gap: 10px;
 }
-
-.each-garment {
+.each-garment-button {
+  border: none;
+}
+.each-garment,
+.each-garment-button {
   padding: 5px 10px;
   background-color: lightgreen;
   opacity: 0.8;
@@ -177,8 +180,9 @@ input {
   align-items: center;
   transition: transform 0.2s ease;
 }
-.each-garment:hover {
-  border: 1px solid black;
+.each-garment:hover,
+.each-garment-button:hover {
+  box-shadow: 0px 0px 10px #46513d;
   opacity: 1.2;
   cursor: pointer;
 }
@@ -187,6 +191,40 @@ input {
   background-color: lightyellow;
 }
 
+.upload-card-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  background-color: #eae2d2;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #46513d;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.close-upload-card-button {
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  transition: all ease 0.2s;
+}
+.close-upload-card-button:hover {
+  background-color: #46513d;
+  color: #d5ccba;
+}
+
 .hidden {
   display: none;
+}
+
+.blurred {
+  filter: blur(12px);
+  pointer-events: none;
 }

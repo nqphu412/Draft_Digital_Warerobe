@@ -66,10 +66,10 @@ if (colorOptionDropbox) {
 // Show warerobe based on current option of category and color
 function showWarerobe(categoryType, colorType) {
   warerobe_grid.innerHTML = `
-          <div class="each-garment">
-            <div>Upload here</div>
-            <div>to fill up your warerobe</div>
-          </div>`;
+          <button class="each-garment-button">
+            <div>&#x21D1;</div>
+            <div>Upload New Garment</div>
+          </button>`;
   currentCategory = categoryType;
   currentColor = colorType;
   // console.log(currentCategory);
