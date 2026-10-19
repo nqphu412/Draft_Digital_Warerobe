@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Draft</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <a href="" class="nav-item">Personal Warerobe</a>
+      <a href="" class="nav-item">Outfit Hallway</a>
+    </div>
+
+    <div class="filter-box">
+      <div class="filter-box-category">
+        <span style="font-size: 30px; padding-left: 10px">Category</span>
+        <button class="category-option selected" value="allCategory">
+          All
+        </button>
+        <button class="category-option" value="top">Top</button>
+        <button class="category-option" value="bottom">Bottom</button>
+        <button class="category-option" value="hat">Hat</button>
+        <button class="category-option" value="footwear">Footwear</button>
+        <button class="category-option" value="accessory">Accessory</button>
+      </div>
+
+      <div class="filter-box-color">
+        <span style="font-size: 30px; padding-left: 10px">Color</span>
+        <select name="color-options" id="color-options">
+          <!-- To allow multiple colors, checkbox with hidden nav is required-->
+          <option value="allColor"></option>
+          <option value="lightblue">Blue</option>
+          <option value="white">White</option>
+          <option value="gray">Gray</option>
+          <option value="pink">Pink</option>
+          <option value="lightcoral">Orange</option>
+          <option value="tan">Brown</option>
+          <option value="mediumaquamarine">Green</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="content-container">
+      <h1>Welcome back to your Warerobe</h1>
+      <div class="warerobe-grid">
+        <!-- This one for js where auto create grid form to show each garment -->
+      </div>
+    </div>
+
+    <div class="outfit-combination">
+      <!-- This one is for showing garments when
+       choosing from the warerobe-grid
+       But maybe best if this is for different site
+       and all the search bar and item list is on the nav bar-->
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
+  </body>
+</html>

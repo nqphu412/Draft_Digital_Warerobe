@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  background-color: #f5f0e6;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+p {
+  display: inline-block;
+  margin: 0;
+}
+
+select,
+button,
+option,
+a {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* For authenticate page */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card,
+.register-card,
+.auth-change-mode-section {
+  padding: 5px 10px;
+  background-color: lightpink;
+}
+
+button.submit {
+  margin-top: 10px;
+}
+
+/* For draft page */
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #292b24;
+  color: #dce5d2;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: fixed;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  color: #dce5d2;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all 0.2s ease;
+}
+.nav-item:hover {
+  color: #292b24;
+  background-color: #a8b59a;
+}
+
+.filter-box {
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  padding: 10px;
+  padding-top: 20px;
+  width: 200px;
+  background-color: #d5ccba;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.filter-box-category,
+.filter-box-color {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-option {
+  height: 30px;
+  width: 100%;
+  border: none;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.category-option:hover {
+  background-color: #68685b;
+}
+
+.category-option:active,
+.category-option.selected {
+  background-color: #292b24;
+  color: #f5f0e6;
+}
+
+#color-options {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+}
+
+.content-container {
+  margin-left: 220px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.warerobe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.each-garment {
+  padding: 5px 10px;
+  background-color: lightgreen;
+  opacity: 0.8;
+  border-bottom: 1px solid darkgreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+.each-garment:hover {
+  border: 1px solid black;
+  opacity: 1.2;
+  cursor: pointer;
+}
+
+.outfit-combination {
+  background-color: lightyellow;
+}
