@@ -1,4 +1,11 @@
 /////////////// Main page
+
+// Retrieve current user's username
+const currentUsername = sessionStorage.getItem("currentUser");
+const usernameDisplay = document.getElementById("current-username-display");
+usernameDisplay.textContent = `@${currentUsername}`;
+
+// Grid for all garments
 const itemData = {
   // Later, this one is exported from the data table item (1 user) or warerobe (when integrate many users)
   // Ignore index here, all in order that they are added

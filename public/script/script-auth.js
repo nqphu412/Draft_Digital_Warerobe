@@ -94,6 +94,7 @@ loginForm.addEventListener("submit", async (event) => {
     loginMessage.textContent = data.message;
 
     if (response.ok) {
+      sessionStorage.setItem("currentUser", username);
       loginForm.reset();
       window.location.href = "./draft.html";
     }

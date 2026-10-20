@@ -88,7 +88,7 @@ input {
 .nav-bar {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
   background-color: #292b24;
   color: #dce5d2;
   top: 0px;
@@ -99,6 +99,12 @@ input {
   padding-right: 10px;
   position: fixed;
   z-index: 1000;
+}
+
+.left-side-nav-bar,
+.right-side-nav-bar {
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-item {

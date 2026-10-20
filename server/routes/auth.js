@@ -72,7 +72,7 @@ router.post("/login", async (req, res) => {
 
     // Get information of user (if exisiting)
     const matchingUser = await User.findOne({
-      username: username,
+      username: username.trim().toLowerCase(),
     });
 
     if (!matchingUser) {
@@ -104,7 +104,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// POST /api/me
-//router.post();
+// POST /api/logout
+//router.post("/logout");
 
 export default router;
