@@ -15,28 +15,38 @@
     <!-- Login -->
     <div class="login-card">
       <h3>Log in to Digital Warerobe</h3>
-      <form method="POST">
+      <form id="login-form" method="POST">
         <label for="username">Username</label>
         <input type="text" name="username" id="username" />
         <label for="password">Password</label>
         <input type="password" name="password" id="password" />
 
         <button class="submit" type="submit">Log In</button>
+        <p class="auth-message login-message"></p>
       </form>
     </div>
 
     <!-- Register -->
     <div class="register-card hidden">
       <h3>Sign up to Digital Warerobe</h3>
-      <form method="POST">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" />
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
+      <form id="register-form" method="POST">
+        <label for="register-username">Username</label>
+        <input type="text" name="register-username" id="register-username" />
+        <label for="register-password">Password</label>
+        <input
+          type="password"
+          name="register-password"
+          id="register-password"
+        />
         <label for="confirm-password">Confirm password</label>
-        <input type="password" name="confirm-password" id="confirm-password" />
+        <input
+          type="password"
+          name="register-confirm-password"
+          id="register-confirm-password"
+        />
 
         <button class="submit" type="submit">Create account</button>
+        <p class="auth-message register-message"></p>
       </form>
     </div>
 
@@ -47,6 +57,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="../script.js"></script>
+    <script src="../script/script-auth.js"></script>
   </body>
 </html>

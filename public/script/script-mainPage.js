@@ -129,35 +129,3 @@ closeUploadCardButton.addEventListener("click", () => {
   area3.classList.remove("blurred");
   uploadCard.classList.add("hidden");
 });
-
-/////////////// Login - Register page
-// Change between Login and Register
-// Make sure when change mode, all old data in the previous form should be deleted
-const changeModeSection = document.querySelector(".auth-change-mode-section");
-const changeModeButton = changeModeSection.querySelector(
-  ".auth-change-mode-button",
-);
-const register_card = document.querySelector(".register-card");
-const login_card = document.querySelector(".login-card");
-
-changeModeButton.addEventListener("click", function () {
-  if (register_card.classList.contains("hidden")) {
-    // Moving from login mode to register mode
-    login_card.querySelector("form").reset();
-
-    register_card.classList.remove("hidden");
-    login_card.classList.add("hidden");
-
-    changeModeSection.querySelector("p").innerHTML = "Already had account?";
-    changeModeButton.innerHTML = "Go to login";
-  } else {
-    // Moving from register mode to login mode
-    register_card.querySelector("form").reset();
-
-    login_card.classList.remove("hidden");
-    register_card.classList.add("hidden");
-
-    changeModeSection.querySelector("p").innerHTML = "New to Digital Warerobe";
-    changeModeButton.innerHTML = "Create an account";
-  }
-});
