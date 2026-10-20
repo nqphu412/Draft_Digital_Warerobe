@@ -59,7 +59,50 @@ router.post("/register", async (req, res) => {
 });
 
 // POST /api/login
-//router.post();
+router.post("/login", async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    // All information must be filled
+    if (!username || !password) {
+      return res.status(400).json({
+        message: "Please fill all information",
+      });
+    }
+
+    // Get information of user (if exisiting)
+    const matchingUser = await User.findOne({
+      username: username,
+    });
+
+    if (!matchingUser) {
+      return res.status(404).json({
+        message: "Account does not exist",
+      });
+    }
+
+    // Check password
+    const isPasswordCorrect = await bcrypt.compare(
+      password,
+      matchingUser.password,
+    );
+
+    if (!isPasswordCorrect) {
+      return res.status(401).json({
+        message: "Incorrect password.",
+      });
+    } else {
+      return res.status(200).json({
+        message: "Login successful.",
+      });
+    }
+  } catch (error) {
+    console.error("Login error:", error);
+    return res.status(500).json({
+      message: "Login is not available at the moment",
+    });
+  }
+});
 
 // POST /api/me
 //router.post();
