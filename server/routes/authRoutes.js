@@ -6,6 +6,6 @@ const { register, login, logout, getMe } = require("../controllers/authControlle
 router.post("/login", login);
 router.post("/register", register);
 router.post("/logout", logout);
-router.get("/me", isAuthenticatedUser, getMe);
+router.get("/me",isAuthenticatedUser, getMe);
 
 export default router;
