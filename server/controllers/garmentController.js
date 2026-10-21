@@ -29,7 +29,7 @@ export const getGarments = async(req, res) => {
         console.error("getGarments error: ", error);
         return res.status(500).json({
             status: "error",
-            messageL "Failed to retrieve closet items.",
+            message: "Failed to retrieve closet items.",
         });
     }
 };
