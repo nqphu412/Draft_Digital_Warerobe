@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
 export const isAuthenticatedUser = async (req, res, next) => {
     try {
