@@ -17,7 +17,9 @@ p {
 select,
 button,
 option,
+input,
 a {
+  font-family: "Bebas Neue", sans-serif;
   cursor: pointer;
 }
 
@@ -58,32 +60,35 @@ input {
 }
 
 .submit,
-.auth-change-mode-button {
+.auth-change-mode-button,
+.upload-card-add-button {
   height: 30px;
   border: none;
   margin-top: 10px;
   border-radius: 5px;
-  background-color: #68685b;
+  color: #f5f0e6;
+  background-color: #46513d;
   transition: all ease 0.2s;
 }
 
 .submit:hover,
-.auth-change-mode-button:hover {
+.auth-change-mode-button:hover,
+.upload-card-add-button:hover {
   background-color: #292b24;
-  color: #f5f0e6;
 }
 
 .submit:active,
-.auth-change-mode-button:active {
+.auth-change-mode-button:active,
+.upload-card-add-button:active {
   background-color: #eae2d2;
-  color: #292b24;
+  color: #46513d;
 }
 
 /* For draft page */
 .nav-bar {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
   background-color: #292b24;
   color: #dce5d2;
   top: 0px;
@@ -94,6 +99,12 @@ input {
   padding-right: 10px;
   position: fixed;
   z-index: 1000;
+}
+
+.left-side-nav-bar,
+.right-side-nav-bar {
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-item {
@@ -147,7 +158,10 @@ input {
   color: #f5f0e6;
 }
 
-#color-options {
+#color-options,
+#upload-card-garment-category,
+#upload-card-garment-color {
+  padding-left: 14px;
   width: 100%;
   height: 30px;
   border-radius: 5px;
@@ -166,8 +180,11 @@ input {
   column-gap: 10px;
   row-gap: 10px;
 }
-
-.each-garment {
+.upload-garment-button {
+  border: none;
+}
+.each-garment,
+.upload-garment-button {
   padding: 5px 10px;
   background-color: lightgreen;
   opacity: 0.8;
@@ -177,8 +194,9 @@ input {
   align-items: center;
   transition: transform 0.2s ease;
 }
-.each-garment:hover {
-  border: 1px solid black;
+.each-garment:hover,
+.upload-garment-button:hover {
+  box-shadow: 0px 0px 10px #46513d;
   opacity: 1.2;
   cursor: pointer;
 }
@@ -187,6 +205,82 @@ input {
   background-color: lightyellow;
 }
 
+.upload-card-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: clamp(400px, 70vh, 500px);
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #eae2d2;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #46513d;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.close-upload-card-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  transition: all ease 0.2s;
+}
+.close-upload-card-button:hover {
+  background-color: #46513d;
+  color: #d5ccba;
+}
+
+.upload-form {
+  width: 100%;
+}
+
+#upload-card-garment-image {
+  padding-top: min(30px, max(20px, 4vh));
+
+  display: flex;
+  flex-direction: column;
+  text-align-last: center;
+  justify-content: center;
+  text-align: center;
+
+  height: min(300px, max(120px, 23vh));
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Style the Choose File button */
+#upload-card-garment-image::file-selector-button {
+  display: block;
+  background-color: #46513d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 0 auto 10px;
+  cursor: pointer;
+}
+
+.upload-card-garment-category-color-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
 .hidden {
   display: none;
+}
+
+.blurred {
+  filter: blur(12px);
+  pointer-events: none;
 }
