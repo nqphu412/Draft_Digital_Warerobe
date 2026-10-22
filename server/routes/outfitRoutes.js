@@ -4,6 +4,7 @@ import {
   getOutfitById,
   createOutfit,
   updateOutfit,
+  deleteOutfit
 } from "../controllers/outfitController.js";
 import { isAuthenticatedUser } from "../middlewares/authMiddleware.js";
 
@@ -19,5 +20,6 @@ router.route("/")
 router.route("/:id")
   .get(getOutfitById)
   .put(updateOutfit)
+  .delete(deleteOutfit);
 
 export default router;
