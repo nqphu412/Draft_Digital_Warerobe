@@ -14,7 +14,7 @@ const OutfitSchema = new mongoose.Schema(
       trim: true,
       maxLength: [200, "Item name cannot exceed 200 characters"],
     },
-    occassion: {
+    occasion: {
       type: String,
       enum: ["Casual", "Formal", "Party", "Sport", "Other"],
       default: "Casual",
@@ -24,7 +24,7 @@ const OutfitSchema = new mongoose.Schema(
       {
         garmentId: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Item",
+          ref: "Garment",
           required: true,
         },
       },

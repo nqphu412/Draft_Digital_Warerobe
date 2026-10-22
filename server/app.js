@@ -5,6 +5,7 @@ import cors from "cors";
 
 import authRoutes from "./routes/authRoutes.js";
 import garmentRoutes from "./routes/garmentRoutes.js";
+import outfitRoutes from "./routes/outfitRoutes.js";
 
 //initialize express app
 const app = express();
@@ -30,5 +31,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //set application API's routes
 app.use("/api/auth", authRoutes);
 app.use("/api/garments", garmentRoutes);
+app.use("/api/outfits", outfitRoutes);
 
 export default app;
