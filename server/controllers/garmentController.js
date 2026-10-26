@@ -2,7 +2,7 @@ import Garment from "../models/garment.js";
 import Outfit from "../models/outfit.js";
 
 // GET /api/garments
-export const getGarments = async(req, res) => {
+export const getGarments = async (req, res) => {
     try {
         const { category, colour } = req.query;
 
