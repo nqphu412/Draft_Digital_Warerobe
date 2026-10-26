@@ -1,4 +1,11 @@
 /////////////// Main page
+
+// Retrieve current user's username
+const currentUsername = sessionStorage.getItem("currentUser");
+const usernameDisplay = document.getElementById("current-username-display");
+usernameDisplay.textContent = `@${currentUsername}`;
+
+// Grid for all garments
 const itemData = {
   // Later, this one is exported from the data table item (1 user) or warerobe (when integrate many users)
   // Ignore index here, all in order that they are added
@@ -66,10 +73,10 @@ if (colorOptionDropbox) {
 // Show warerobe based on current option of category and color
 function showWarerobe(categoryType, colorType) {
   warerobe_grid.innerHTML = `
-          <div class="each-garment">
-            <div>Upload here</div>
-            <div>to fill up your warerobe</div>
-          </div>`;
+          <button class="upload-garment-button">
+            <div>&#x21D1;</div>
+            <div>Upload New Garment</div>
+          </button>`;
   currentCategory = categoryType;
   currentColor = colorType;
   // console.log(currentCategory);
@@ -100,34 +107,32 @@ function showWarerobe(categoryType, colorType) {
   }
 }
 
-/////////////// Login - Register page
-// Change between Login and Register
-// Make sure when change mode, all old data in the previous form should be deleted
-const changeModeSection = document.querySelector(".auth-change-mode-section");
-const changeModeButton = changeModeSection.querySelector(
-  ".auth-change-mode-button",
+/////////////// Open - Close upload garment card
+const uploadGarmentButton = document.querySelector(".upload-garment-button");
+const closeUploadCardButton = document.querySelector(
+  ".close-upload-card-button",
 );
-const register_card = document.querySelector(".register-card");
-const login_card = document.querySelector(".login-card");
 
-changeModeButton.addEventListener("click", function () {
-  if (register_card.classList.contains("hidden")) {
-    // Moving from login mode to register mode
-    login_card.querySelector("form").reset();
+uploadGarmentButton.addEventListener("click", () => {
+  const area1 = document.querySelector(".nav-bar");
+  const area2 = document.querySelector(".filter-box");
+  const area3 = document.querySelector(".content-container");
+  const uploadCard = document.querySelector(".upload-card-container");
 
-    register_card.classList.remove("hidden");
-    login_card.classList.add("hidden");
+  area1.classList.add("blurred");
+  area2.classList.add("blurred");
+  area3.classList.add("blurred");
+  uploadCard.classList.remove("hidden");
+});
 
-    changeModeSection.querySelector("p").innerHTML = "Already had account?";
-    changeModeButton.innerHTML = "Go to login";
-  } else {
-    // Moving from register mode to login mode
-    register_card.querySelector("form").reset();
+closeUploadCardButton.addEventListener("click", () => {
+  const area1 = document.querySelector(".nav-bar");
+  const area2 = document.querySelector(".filter-box");
+  const area3 = document.querySelector(".content-container");
+  const uploadCard = document.querySelector(".upload-card-container");
 
-    login_card.classList.remove("hidden");
-    register_card.classList.add("hidden");
-
-    changeModeSection.querySelector("p").innerHTML = "New to Digital Warerobe";
-    changeModeButton.innerHTML = "Create an account";
-  }
+  area1.classList.remove("blurred");
+  area2.classList.remove("blurred");
+  area3.classList.remove("blurred");
+  uploadCard.classList.add("hidden");
 });
