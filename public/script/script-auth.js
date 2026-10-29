@@ -49,6 +49,7 @@ registerForm.addEventListener("submit", async (event) => {
     const response = await fetch("http://localhost:3000/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      credentials: "include",
       body: JSON.stringify({
         username,
         password,
@@ -83,6 +84,7 @@ loginForm.addEventListener("submit", async (event) => {
   try {
     const response = await fetch("http://localhost:3000/api/auth/login", {
       method: "POST",
+      credentials: "include",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         username,
@@ -94,7 +96,6 @@ loginForm.addEventListener("submit", async (event) => {
     loginMessage.textContent = data.message;
 
     if (response.ok) {
-      sessionStorage.setItem("currentUser", username);
       loginForm.reset();
       window.location.href = "./draft.html";
     }
