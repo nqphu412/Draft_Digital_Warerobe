@@ -1,9 +1,32 @@
 /////////////// Main page
 
 // Retrieve current user's username
-const currentUsername = sessionStorage.getItem("currentUser");
-const usernameDisplay = document.getElementById("current-username-display");
-usernameDisplay.textContent = `@${currentUsername}`;
+async function getCurrentUser() {
+  try {
+    const response = await fetch("http://localhost:3000/api/auth/me", {
+      credentials: "include",
+    });
+
+    if (response.status === 401) {
+      window.location.href = "./login_registerPage.html";
+      return;
+    }
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error("Failed to get current user");
+      return;
+    }
+
+    const usernameDisplay = document.getElementById("current-username-display");
+    usernameDisplay.textContent = `@${data.user.username}`;
+  } catch (error) {
+    console.error("Error getting current user: ", error);
+  }
+}
+
+getCurrentUser();
 
 // Grid for all garments
 const itemData = {

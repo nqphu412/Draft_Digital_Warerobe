@@ -1,6 +1,5 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import bodyParser from "body-parser";
 import cors from "cors";
 
 import authRoutes from "./routes/authRoutes.js";
@@ -25,8 +24,8 @@ app.use(
 );
 
 //parse body of request
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //set application API's routes
 app.use("/api/auth", authRoutes);
