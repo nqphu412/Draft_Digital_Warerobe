@@ -130,33 +130,3 @@ function showWarerobe(categoryType, colorType) {
     }
   }
 }
-
-/////////////// Open - Close upload garment card
-const uploadGarmentButton = document.querySelector(".upload-garment-button");
-const closeUploadCardButton = document.querySelector(
-  ".close-upload-card-button",
-);
-
-uploadGarmentButton.addEventListener("click", () => {
-  const area1 = document.querySelector(".nav-bar");
-  const area2 = document.querySelector(".filter-box");
-  const area3 = document.querySelector(".content-container");
-  const uploadCard = document.querySelector(".upload-card-container");
-
-  area1.classList.add("blurred");
-  area2.classList.add("blurred");
-  area3.classList.add("blurred");
-  uploadCard.classList.remove("hidden");
-});
-
-closeUploadCardButton.addEventListener("click", () => {
-  const area1 = document.querySelector(".nav-bar");
-  const area2 = document.querySelector(".filter-box");
-  const area3 = document.querySelector(".content-container");
-  const uploadCard = document.querySelector(".upload-card-container");
-
-  area1.classList.remove("blurred");
-  area2.classList.remove("blurred");
-  area3.classList.remove("blurred");
-  uploadCard.classList.add("hidden");
-});
