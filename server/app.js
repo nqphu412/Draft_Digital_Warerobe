@@ -14,7 +14,7 @@ const app = express();
 app.use(cookieParser());
 
 //CORS configuration
-const allowedOrigins = ["http://127.0.0.1:5500"];
+const allowedOrigins = ["http://127.0.0.1:5500", "http://localhost:5500"];
 if (process.env.APP_BASE_URL) allowedOrigins.push(process.env.APP_BASE_URL);
 
 app.use(
